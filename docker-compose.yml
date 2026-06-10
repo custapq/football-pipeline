@@ -16,6 +16,7 @@ x-airflow-common: &airflow-common
     - ./airflow/plugins:/opt/airflow/plugins
     - ./ingestion:/opt/airflow/ingestion
     - ./spark:/opt/airflow/spark 
+    - ./football_intelligence:/opt/airflow/football_intelligence
     - ~/.config/gcloud:/home/airflow/.config/gcloud:ro
   depends_on:
     postgres:

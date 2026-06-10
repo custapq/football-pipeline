@@ -1,1 +1,53 @@
+# ─── Credentials & Secrets ───────────────────────────
+.env
+*.json
+gcp-key.json
+application_default_credentials.json
+service-account*.json
+
+# ─── Python ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
 venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ─── dbt ─────────────────────────────────────────────
+football_intelligence/target/
+football_intelligence/dbt_packages/
+football_intelligence/logs/
+football_intelligence/profiles/
+
+# ─── Airflow ─────────────────────────────────────────
+airflow/logs/
+airflow/*.pid
+airflow/*.cfg
+airflow/*.db
+
+# ─── Spark ───────────────────────────────────────────
+spark/jars/
+
+# ─── Docker ──────────────────────────────────────────
+postgres_data/
+
+# ─── OS ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ─── IDE ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.iml
+
+# ─── Temp files ──────────────────────────────────────
+*.tmp
+*.log
+/tmp/

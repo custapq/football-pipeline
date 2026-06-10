@@ -1,0 +1,24 @@
+name: 'football_intelligence'
+version: '1.0.0'
+config-version: 2
+
+profile: 'football_intelligence'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+models:
+  football_intelligence:
+    staging:
+      +materialized: view
+      +schema: football_staging
+    intermediate:
+      +materialized: table
+      +schema: football_intermediate
+    mart:
+      +materialized: table
+      +schema: football_mart

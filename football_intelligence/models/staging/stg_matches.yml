@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_matches
+    description: "Cleaned and deduplicated match data"
+    columns:
+      - name: match_id
+        description: "Unique match identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: home_team_id
+        tests:
+          - not_null
+
+      - name: away_team_id
+        tests:
+          - not_null
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['FINISHED', 'SCHEDULED', 'TIMED', 'POSTPONED', 'CANCELLED', 'IN_PLAY', 'PAUSED', 'SUSPENDED']

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_teams
+    description: "Team dimension with season statistics"
+    columns:
+      - name: team_id
+        tests:
+          - unique
+          - not_null
+
+      - name: total_points
+        tests:
+          - not_null
+
+  - name: fct_matches
+    description: "Match fact table"
+    columns:
+      - name: match_id
+        tests:
+          - unique
+          - not_null

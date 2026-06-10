@@ -1,0 +1,44 @@
+name: Airflow DAG Validation
+
+on:
+  pull_request:
+    paths:
+      - 'airflow/dags/**'
+
+jobs:
+  validate-dags:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install apache-airflow==2.8.1 \
+            --index-url https://pypi.org/simple/
+
+      - name: Validate DAGs
+        run: |
+          python -c "
+          import os, sys
+          sys.path.insert(0, 'airflow/dags')
+          dag_folder = 'airflow/dags'
+          for f in os.listdir(dag_folder):
+              if f.endswith('.py'):
+                  print(f'Validating {f}...')
+                  __import__(f[:-3])
+                  print(f'✅ {f} OK')
+          "
+
+      - name: Python lint
+        run: |
+          pip install flake8
+          flake8 airflow/dags/ \
+            --max-line-length=120 \
+            --ignore=E501,W503
