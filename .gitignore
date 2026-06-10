@@ -22,7 +22,6 @@ build/
 football_intelligence/target/
 football_intelligence/dbt_packages/
 football_intelligence/logs/
-football_intelligence/profiles/
 
 # ─── Airflow ─────────────────────────────────────────
 airflow/logs/
