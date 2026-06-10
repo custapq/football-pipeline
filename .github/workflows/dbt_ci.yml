@@ -29,7 +29,11 @@ jobs:
           service_account: github-actions-sa@bangkok-football.iam.gserviceaccount.com
 
       - name: Install dbt
-        run: pip install dbt-bigquery==1.7.0 --index-url https://pypi.org/simple/
+        run: |
+          pip install \
+            dbt-bigquery==1.7.0 \
+            google-cloud-bigquery==3.17.1 \
+            --index-url https://pypi.org/simple/
 
       - name: dbt compile
         working-directory: football_intelligence
