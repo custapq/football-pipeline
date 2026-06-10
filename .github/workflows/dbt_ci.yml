@@ -27,16 +27,20 @@ jobs:
         with:
           workload_identity_provider: projects/243936908135/locations/global/workloadIdentityPools/github-pool/providers/github-provider
           service_account: github-actions-sa@bangkok-football.iam.gserviceaccount.com
+          create_credentials_file: true
+          export_environment_variables: true
 
       - name: Install dbt
-        run: pip install dbt-bigquery==1.7.0 --index-url https://pypi.org/simple/
+        run: |
+          pip install \
+            dbt-bigquery==1.7.0 \
+            google-cloud-bigquery==3.17.1 \
+            --index-url https://pypi.org/simple/
 
       - name: dbt compile
         working-directory: football_intelligence
-        run: |
-          dbt compile --profiles-dir ./profiles
+        run: dbt compile --profiles-dir profiles
 
       - name: dbt test
         working-directory: football_intelligence
-        run: |
-          dbt test --profiles-dir ./profiles
+        run: dbt test --profiles-dir profiles
