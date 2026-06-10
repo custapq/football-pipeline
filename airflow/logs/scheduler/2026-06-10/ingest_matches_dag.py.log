@@ -2380,3 +2380,17 @@ IndentationError: expected an indented block
 [2026-06-10T21:25:18.486+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:25:18.486+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-06-10T21:25:18.505+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:25:18.505+0000] {dag.py:3823} INFO - Setting next_dagrun for ingest_football_matches to 2026-06-10 06:00:00+00:00, run_after=2026-06-11 06:00:00+00:00
 [2026-06-10T21:25:18.521+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_matches_dag.py took 0.075 seconds
+[2026-06-10T21:25:48.653+0000] {processor.py:161} INFO - Started process (PID=405) to work on /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:25:48.654+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_matches_dag.py for tasks to queue
+[2026-06-10T21:25:48.655+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:25:48.655+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:25:48.668+0000] {processor.py:840} INFO - DAG(s) 'ingest_football_matches' retrieved from /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:25:48.696+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:25:48.696+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-06-10T21:25:48.717+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:25:48.716+0000] {dag.py:3823} INFO - Setting next_dagrun for ingest_football_matches to 2026-06-10 06:00:00+00:00, run_after=2026-06-11 06:00:00+00:00
+[2026-06-10T21:25:48.732+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_matches_dag.py took 0.082 seconds
+[2026-06-10T21:26:18.841+0000] {processor.py:161} INFO - Started process (PID=410) to work on /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:26:18.843+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_matches_dag.py for tasks to queue
+[2026-06-10T21:26:18.844+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:26:18.843+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:26:18.857+0000] {processor.py:840} INFO - DAG(s) 'ingest_football_matches' retrieved from /opt/airflow/dags/ingest_matches_dag.py
+[2026-06-10T21:26:18.887+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:26:18.887+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-06-10T21:26:18.911+0000] {logging_mixin.py:188} INFO - [2026-06-10T21:26:18.911+0000] {dag.py:3823} INFO - Setting next_dagrun for ingest_football_matches to 2026-06-10 06:00:00+00:00, run_after=2026-06-11 06:00:00+00:00
+[2026-06-10T21:26:18.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_matches_dag.py took 0.091 seconds
