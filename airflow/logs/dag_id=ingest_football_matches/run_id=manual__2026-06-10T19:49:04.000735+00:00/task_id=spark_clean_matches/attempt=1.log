@@ -1,0 +1,25 @@
+[2026-06-10T19:49:25.881+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T19:49:25.890+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T19:49:25.890+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-06-10T19:49:25.902+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): spark_clean_matches> on 2026-06-10 19:49:04.000735+00:00
+[2026-06-10T19:49:25.907+0000] {standard_task_runner.py:60} INFO - Started process 319 to run task
+[2026-06-10T19:49:25.910+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingest_football_matches', 'spark_clean_matches', 'manual__2026-06-10T19:49:04.000735+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/ingest_matches_dag.py', '--cfg-path', '/tmp/tmpjg9n2lvo']
+[2026-06-10T19:49:25.912+0000] {standard_task_runner.py:88} INFO - Job 20: Subtask spark_clean_matches
+[2026-06-10T19:49:25.960+0000] {task_command.py:423} INFO - Running <TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [running]> on host 0d58ffefa354
+[2026-06-10T19:49:26.065+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='teeradon' AIRFLOW_CTX_DAG_ID='ingest_football_matches' AIRFLOW_CTX_TASK_ID='spark_clean_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-06-10T19:49:04.000735+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-10T19:49:04.000735+00:00'
+[2026-06-10T19:49:26.066+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-06-10T19:49:26.067+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            /opt/spark/bin/spark-submit             --master local[*]             /opt/spark/jobs/clean_matches.py             --input-path /tmp/matches_2026-06-10.json             --output-path /tmp/matches_parquet_2026-06-10\n        ']
+[2026-06-10T19:49:26.078+0000] {subprocess.py:86} INFO - Output:
+[2026-06-10T19:49:26.082+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 2: /opt/spark/bin/spark-submit: No such file or directory
+[2026-06-10T19:49:26.083+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2026-06-10T19:49:26.096+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2026-06-10T19:49:26.099+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingest_football_matches, task_id=spark_clean_matches, execution_date=20260610T194904, start_date=20260610T194925, end_date=20260610T194926
+[2026-06-10T19:49:26.112+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 20 for task spark_clean_matches (Bash command failed. The command returned a non-zero exit code 127.; 319)
+[2026-06-10T19:49:26.128+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-06-10T19:49:26.152+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,31 @@
+[0m20:15:51.553570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035e232d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035c171d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035c171d30>]}
+
+
+============================== 20:15:51.559314 | bb20dfb1-e2da-4925-b909-d8a943a783da ==============================
+[0m20:15:51.559314 [info ] [MainThread]: Running with dbt=1.7.0
+[0m20:15:51.559928 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/home/airflow/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:15:51.560505 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/airflow/.dbt')}
+[0m20:15:51.560961 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m20:15:57.523525 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.8/site-packages/dbt/include/starter_project
+[0m20:15:57.531210 [info ] [MainThread]: 
+Your new dbt project "football_intelligence" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:15:57.531950 [info ] [MainThread]: Setting up your profile.
+[0m20:16:47.105876 [info ] [MainThread]: Profile football_intelligence written to /home/airflow/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:16:47.110065 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 57.7117, "process_user_time": 2.901933, "process_kernel_time": 1.876583, "process_mem_max_rss": "202428", "process_in_blocks": "23552", "process_out_blocks": "6320"}
+[0m20:16:47.111071 [debug] [MainThread]: Command `dbt init` succeeded at 20:16:47.110855 after 57.71 seconds
+[0m20:16:47.111764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035e232d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035c181790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b035c181100>]}
+[0m20:16:47.112489 [debug] [MainThread]: Flushing usage events

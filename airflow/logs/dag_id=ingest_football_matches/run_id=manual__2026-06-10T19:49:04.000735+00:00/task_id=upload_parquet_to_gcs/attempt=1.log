@@ -1,0 +1,41 @@
+[2026-06-10T20:06:33.062+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingest_football_matches.upload_parquet_to_gcs manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T20:06:33.069+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingest_football_matches.upload_parquet_to_gcs manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T20:06:33.069+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-06-10T20:06:33.087+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): upload_parquet_to_gcs> on 2026-06-10 19:49:04.000735+00:00
+[2026-06-10T20:06:33.093+0000] {standard_task_runner.py:60} INFO - Started process 1460 to run task
+[2026-06-10T20:06:33.096+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingest_football_matches', 'upload_parquet_to_gcs', 'manual__2026-06-10T19:49:04.000735+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/ingest_matches_dag.py', '--cfg-path', '/tmp/tmp_h96le0j']
+[2026-06-10T20:06:33.098+0000] {standard_task_runner.py:88} INFO - Job 37: Subtask upload_parquet_to_gcs
+[2026-06-10T20:06:33.148+0000] {task_command.py:423} INFO - Running <TaskInstance: ingest_football_matches.upload_parquet_to_gcs manual__2026-06-10T19:49:04.000735+00:00 [running]> on host bfabdf7211b4
+[2026-06-10T20:06:33.226+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='teeradon' AIRFLOW_CTX_DAG_ID='ingest_football_matches' AIRFLOW_CTX_TASK_ID='upload_parquet_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2026-06-10T19:49:04.000735+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-10T19:49:04.000735+00:00'
+[2026-06-10T20:06:34.785+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/._SUCCESS.crc
+[2026-06-10T20:06:34.895+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/_SUCCESS
+[2026-06-10T20:06:35.039+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=10/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:35.163+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=10/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:35.279+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=11/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:35.399+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=11/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:35.521+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=12/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:35.664+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=12/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:35.799+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=8/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:35.916+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=8/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:36.038+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=9/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:36.146+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2025/month=9/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:36.270+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=2/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:36.390+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=2/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:36.510+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=4/.part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet.crc
+[2026-06-10T20:06:36.633+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=4/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:36.789+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=4/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:36.907+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=4/part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet
+[2026-06-10T20:06:37.027+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=1/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:37.149+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=1/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:37.277+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=3/.part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet.crc
+[2026-06-10T20:06:37.408+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=3/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:37.525+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=3/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:37.645+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=3/part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet
+[2026-06-10T20:06:37.770+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=5/.part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet.crc
+[2026-06-10T20:06:37.900+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=5/part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet
+[2026-06-10T20:06:38.018+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=5/.part-00000-77742004-9a1e-4b7d-a81e-e12697257b43.c000.snappy.parquet.crc
+[2026-06-10T20:06:38.137+0000] {ingest_matches_dag.py:154} INFO - Uploaded matches/matches_parquet_2026-06-10/year=2026/month=5/part-00000-5a4e4593-6608-4a27-9e3c-5e3ab911056b.c000.snappy.parquet
+[2026-06-10T20:06:38.137+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-06-10T20:06:38.149+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingest_football_matches, task_id=upload_parquet_to_gcs, execution_date=20260610T194904, start_date=20260610T200633, end_date=20260610T200638
+[2026-06-10T20:06:38.169+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-06-10T20:06:38.185+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,16 @@
+# GCP
+google-cloud-storage==2.14.0
+google-cloud-bigquery==3.17.1
+
+# API
+requests==2.31.0
+
+# Spark
+pyspark==3.5.0
+
+# Utils
+python-dotenv==1.0.0
+
+# dbt
+dbt-core==1.7.0
+dbt-bigquery==1.7.0

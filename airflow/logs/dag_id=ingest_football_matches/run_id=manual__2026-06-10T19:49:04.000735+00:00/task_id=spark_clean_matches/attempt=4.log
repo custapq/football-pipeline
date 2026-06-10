@@ -1,0 +1,15 @@
+[2026-06-10T20:06:20.763+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T20:06:20.770+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [queued]>
+[2026-06-10T20:06:20.770+0000] {taskinstance.py:2170} INFO - Starting attempt 4 of 4
+[2026-06-10T20:06:20.782+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): spark_clean_matches> on 2026-06-10 19:49:04.000735+00:00
+[2026-06-10T20:06:20.787+0000] {standard_task_runner.py:60} INFO - Started process 867 to run task
+[2026-06-10T20:06:20.790+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingest_football_matches', 'spark_clean_matches', 'manual__2026-06-10T19:49:04.000735+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/ingest_matches_dag.py', '--cfg-path', '/tmp/tmps855a9w3']
+[2026-06-10T20:06:20.793+0000] {standard_task_runner.py:88} INFO - Job 36: Subtask spark_clean_matches
+[2026-06-10T20:06:20.841+0000] {task_command.py:423} INFO - Running <TaskInstance: ingest_football_matches.spark_clean_matches manual__2026-06-10T19:49:04.000735+00:00 [running]> on host bfabdf7211b4
+[2026-06-10T20:06:20.920+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='teeradon' AIRFLOW_CTX_DAG_ID='ingest_football_matches' AIRFLOW_CTX_TASK_ID='spark_clean_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-06-10T19:49:04.000735+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-10T19:49:04.000735+00:00'
+[2026-06-10T20:06:29.359+0000] {clean_matches.py:82} INFO - ✅ Validation passed — 380 records
+[2026-06-10T20:06:32.240+0000] {ingest_matches_dag.py:193} INFO - ✅ Spark job completed — output: /tmp/matches_parquet_2026-06-10
+[2026-06-10T20:06:32.317+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-06-10T20:06:32.329+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingest_football_matches, task_id=spark_clean_matches, execution_date=20260610T194904, start_date=20260610T200620, end_date=20260610T200632
+[2026-06-10T20:06:32.352+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-06-10T20:06:32.376+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

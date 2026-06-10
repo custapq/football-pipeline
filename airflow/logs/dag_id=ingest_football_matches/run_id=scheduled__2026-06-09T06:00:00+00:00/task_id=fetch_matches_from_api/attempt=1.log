@@ -1,0 +1,72 @@
+[2026-06-10T19:07:02.057+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingest_football_matches.fetch_matches_from_api scheduled__2026-06-09T06:00:00+00:00 [queued]>
+[2026-06-10T19:07:02.068+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingest_football_matches.fetch_matches_from_api scheduled__2026-06-09T06:00:00+00:00 [queued]>
+[2026-06-10T19:07:02.068+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-06-10T19:07:02.087+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_matches_from_api> on 2026-06-09 06:00:00+00:00
+[2026-06-10T19:07:02.093+0000] {standard_task_runner.py:60} INFO - Started process 186 to run task
+[2026-06-10T19:07:02.100+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingest_football_matches', 'fetch_matches_from_api', 'scheduled__2026-06-09T06:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ingest_matches_dag.py', '--cfg-path', '/tmp/tmpxf0ehq0o']
+[2026-06-10T19:07:02.104+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask fetch_matches_from_api
+[2026-06-10T19:07:02.256+0000] {task_command.py:423} INFO - Running <TaskInstance: ingest_football_matches.fetch_matches_from_api scheduled__2026-06-09T06:00:00+00:00 [running]> on host 18e90a2b6b81
+[2026-06-10T19:07:02.414+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='teeradon' AIRFLOW_CTX_DAG_ID='ingest_football_matches' AIRFLOW_CTX_TASK_ID='fetch_matches_from_api' AIRFLOW_CTX_EXECUTION_DATE='2026-06-09T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-09T06:00:00+00:00'
+[2026-06-10T19:07:23.474+0000] {football_api_client.py:56} ERROR - Request failed: HTTPSConnectionPool(host='api.football-data.org', port=443): Max retries exceeded with url: /v4/competitions/PL/matches?dateFrom=2026-06-09&dateTo=2026-06-09 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdaa16d42b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-06-10T19:07:23.475+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7cdaa16d42b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.football-data.org', port=443): Max retries exceeded with url: /v4/competitions/PL/matches?dateFrom=2026-06-09&dateTo=2026-06-09 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdaa16d42b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingest_matches_dag.py", line 47, in fetch_matches
+    raw_data = client.get_matches(
+  File "/opt/airflow/ingestion/football_api_client.py", line 40, in get_matches
+    response = self.session.get(
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.football-data.org', port=443): Max retries exceeded with url: /v4/competitions/PL/matches?dateFrom=2026-06-09&dateTo=2026-06-09 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdaa16d42b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-06-10T19:07:23.492+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingest_football_matches, task_id=fetch_matches_from_api, execution_date=20260609T060000, start_date=20260610T190702, end_date=20260610T190723
+[2026-06-10T19:07:23.513+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task fetch_matches_from_api (HTTPSConnectionPool(host='api.football-data.org', port=443): Max retries exceeded with url: /v4/competitions/PL/matches?dateFrom=2026-06-09&dateTo=2026-06-09 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdaa16d42b0>: Failed to establish a new connection: [Errno 111] Connection refused')); 186)
+[2026-06-10T19:07:23.525+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-06-10T19:07:23.549+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,15 @@
+[2026-06-10T20:02:33.985+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingest_football_matches.fetch_matches_from_api manual__2026-06-10T20:02:32.225200+00:00 [queued]>
+[2026-06-10T20:02:34.001+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingest_football_matches.fetch_matches_from_api manual__2026-06-10T20:02:32.225200+00:00 [queued]>
+[2026-06-10T20:02:34.001+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 4
+[2026-06-10T20:02:34.021+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_matches_from_api> on 2026-06-10 20:02:32.225200+00:00
+[2026-06-10T20:02:34.029+0000] {standard_task_runner.py:60} INFO - Started process 523 to run task
+[2026-06-10T20:02:34.035+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingest_football_matches', 'fetch_matches_from_api', 'manual__2026-06-10T20:02:32.225200+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/ingest_matches_dag.py', '--cfg-path', '/tmp/tmp_69yrueo']
+[2026-06-10T20:02:34.039+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask fetch_matches_from_api
+[2026-06-10T20:02:34.103+0000] {task_command.py:423} INFO - Running <TaskInstance: ingest_football_matches.fetch_matches_from_api manual__2026-06-10T20:02:32.225200+00:00 [running]> on host bfabdf7211b4
+[2026-06-10T20:02:34.203+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='teeradon' AIRFLOW_CTX_DAG_ID='ingest_football_matches' AIRFLOW_CTX_TASK_ID='fetch_matches_from_api' AIRFLOW_CTX_EXECUTION_DATE='2026-06-10T20:02:32.225200+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-10T20:02:32.225200+00:00'
+[2026-06-10T20:02:36.122+0000] {football_api_client.py:46} INFO - Fetched matches for PL
+[2026-06-10T20:02:36.156+0000] {ingest_matches_dag.py:61} INFO - Saved 380 matches to /tmp/matches_2026-06-10.json
+[2026-06-10T20:02:36.189+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-06-10T20:02:36.200+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingest_football_matches, task_id=fetch_matches_from_api, execution_date=20260610T200232, start_date=20260610T200233, end_date=20260610T200236
+[2026-06-10T20:02:36.229+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-06-10T20:02:36.269+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
