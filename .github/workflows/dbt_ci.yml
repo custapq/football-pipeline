@@ -33,10 +33,8 @@ jobs:
 
       - name: dbt compile
         working-directory: football_intelligence
-        run: |
-          dbt compile --profiles-dir ./profiles
+        run: dbt compile --profiles-dir profiles
 
       - name: dbt test
         working-directory: football_intelligence
-        run: |
-          dbt test --profiles-dir ./profiles
+        run: dbt test --profiles-dir profiles
