@@ -10,4 +10,5 @@ football_intelligence:
       job_execution_timeout_seconds: 300
       job_retries: 1
       priority: interactive
+      impersonate_service_account: ""
   target: dev
