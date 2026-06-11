@@ -29,9 +29,6 @@ End-to-end Data Engineering pipeline ที่ดึงข้อมูล Premie
         │
         ▼
 [BigQuery Mart: fct_matches, dim_teams]
-        │
-        ▼
-[Looker Studio Dashboard]
 
 ────────────────────────────────────────────
 [GitHub Actions CI/CD]
@@ -51,7 +48,6 @@ End-to-end Data Engineering pipeline ที่ดึงข้อมูล Premie
 | Transformation | dbt-bigquery 1.7 |
 | CI/CD | GitHub Actions + Workload Identity Federation |
 | Infra | Docker Compose |
-| Dashboard | Looker Studio |
 
 ## 📁 Project Structure
 
