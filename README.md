@@ -1,4 +1,4 @@
-# ⚽ Bangkok Football Intelligence Platform
+# ⚽ Football Data Pipeline
 
 End-to-end Data Engineering pipeline ที่ดึงข้อมูล Premier League จาก Football API
 ผ่าน Airflow, ประมวลผลด้วย PySpark, เก็บใน Google Cloud Storage (Data Lake),
